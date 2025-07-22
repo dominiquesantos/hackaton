@@ -1,7 +1,7 @@
 // src/pages/professor/EditarEvento.jsx
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
-import "../../styles/NovoEvento.css"; // Usa o mesmo CSS de NovoEvento
+import "../../styles/NovoEvento.css"; 
 import { useNavigate, useParams } from "react-router-dom";
 import { getEventoById, updateEvento, deleteEvento } from "../../services/dataService";
 
