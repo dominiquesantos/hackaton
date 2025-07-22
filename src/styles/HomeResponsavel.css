@@ -1,0 +1,201 @@
+/* src/styles/HomeResponsavel.css */
+
+body {
+  background-color: #FFFBEF;
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* HEADER */
+
+.responsavel-header {
+  background-color: #FFFBEF;
+  padding: 20px 0;
+  border-bottom: 1px solid #E0DCCD;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.responsavel-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.responsavel-header .logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+
+.responsavel-header nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.responsavel-header nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.responsavel-header nav a:hover {
+  color: #555;
+}
+
+.responsavel-header .login-button {
+  background-color: #D9D9D9;
+  color: #363636;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.responsavel-header .login-button:hover {
+  background-color: #DCDCDC;
+}
+
+/* HERO */
+
+.home-responsavel .boas-vindas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px 40px;
+}
+
+.boas-vindas h1 {
+  font-size: 32px;
+  color: #363636;
+  font-family: 'Plus Jakarta Sans Bold', sans-serif;
+}
+
+.boas-vindas p {
+  font-size: 16px;
+  color: #363636;
+  font-family: 'Plus Jakarta Sans Medium', sans-serif;
+  margin-bottom: 20px;
+}
+
+.botao-acessar {
+  background-color: #D9D9D9;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  color: #000;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.campo-pesquisa {
+  display: flex;
+  align-items: center;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: fit-content;
+}
+
+.campo-pesquisa input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.campo-pesquisa span {
+  margin-left: 8px;
+  color: #363636;
+}
+
+.img-ilustrativa {
+  max-width: 260px;
+}
+
+/* AGENDA */
+
+.agenda {
+  background-color: rgba(1, 70, 39, 0.87);
+  padding: 40px 80px;
+}
+
+.agenda h2 {
+  color: #F5F5F5;
+  font-size: 24px;
+  font-family: 'Plus Jakarta Sans Bold', sans-serif;
+  margin-bottom: 30px;
+}
+
+.eventos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-evento {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  width: 200px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.card-evento h3 {
+  font-size: 16px;
+  color: #363636;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-evento p {
+  font-size: 14px;
+  color: #363636;
+  margin: 6px 0;
+}
+
+.card-evento button {
+  background-color: #D9D9D9;
+  border: none;
+  padding: 6px 12px;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+}
+
+/* BOTÃO VER MAIS */
+
+.ver-mais-container {
+  margin-top: 30px;
+}
+
+.ver-mais {
+  background-color: #D9D9D9;
+  padding: 10px 20px;
+  font-weight: 600;
+  border: none;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  cursor: pointer;
+  color: #000;
+}
+
+/* RODAPÉ */
+
+.rodape {
+  padding: 40px 80px;
+  background-color: #FFFBEF;
+  font-size: 14px;
+  color: #000;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}

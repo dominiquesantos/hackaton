@@ -1,0 +1,79 @@
+.novo-recado-container {
+  background-color: #FFFBEF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.voltar-btn-wrapper {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.botao-voltar {
+  background-color: #d9d9d9;
+  color: #404040;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-card {
+  background-color: #f5f5f5;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.botoes-acao {
+  display: flex;
+  justify-content: space-between;
+}
+
+.botao-excluir {
+  background-color: #d9d9d9;
+  color: #404040;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-enviar {
+  background-color: #014627;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-bar {
+  height: 50px;
+  background-color: #1f573a;
+  width: 100%;
+  margin-top: 3rem;
+}

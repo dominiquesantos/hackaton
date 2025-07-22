@@ -1,0 +1,346 @@
+/* src/styles/RecadosResponsavel.css */
+
+.recados-responsavel {
+  background-color: #FFFBEF;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* Faixa verde */
+.faixa-verde {
+  background-color: rgba(1, 70, 39, 0.87);
+  padding: 32px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.faixa-verde h1 {
+  font-size: 32px;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  margin: 0;
+}
+
+.campo-busca {
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #404040;
+  width: 260px;
+}
+
+/* Lista de recados */
+.recados-lista {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  
+}
+
+/* Card */
+.card-recado {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 0 0 1px #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  
+}
+
+/* Cabeçalho do card */
+.cabecalho-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  color: #404040;
+}
+
+/* Texto do recado */
+.conteudo-recado {
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #404040;
+  line-height: 1.5;
+}
+
+/* Texto com blur para recados protegidos */
+.protegido {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Botão de recado protegido */
+.botao-protegido {
+  background-color: #B5D7D6;
+  color: #404040;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  cursor: pointer;
+}
+
+/* Botão de "Li o recado" */
+.botao-lido {
+  background-color: #014627;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  cursor: pointer;
+}
+
+/* Campo de senha */
+.senha-container input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  width: 200px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+/* src/styles/RecadosResponsavel.css */
+
+.recados-responsavel {
+  background-color: #FFFBEF;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Faixa verde */
+.faixa-verde {
+  background-color: rgba(1, 70, 39, 0.87);
+  padding: 32px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.faixa-verde h1 {
+  font-size: 32px;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  margin: 0;
+}
+
+.campo-busca {
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #404040;
+  width: 260px;
+}
+
+/* Lista de recados */
+.recados-lista {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Card */
+.card-recado {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 0 0 1px #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Cabeçalho do card */
+.cabecalho-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  color: #404040;
+}
+
+/* Texto do recado */
+.conteudo-recado {
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #404040;
+  line-height: 1.5;
+}
+
+/* Texto com blur para recados protegidos */
+.protegido {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Botão de recado protegido */
+.botao-protegido {
+  background-color: #B5D7D6;
+  color: #404040;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  cursor: pointer;
+}
+
+/* Botão de "Li o recado" */
+.botao-lido {
+  background-color: #014627;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  cursor: pointer;
+}
+
+/* Campo de senha */
+.senha-container input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  width: 200px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+/* src/styles/RecadosResponsavel.css */
+
+.recados-responsavel {
+  background-color: #FFFBEF;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Faixa verde */
+.faixa-verde {
+  background-color: rgba(1, 70, 39, 0.87);
+  padding: 32px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.faixa-verde h1 {
+  font-size: 32px;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  margin: 0;
+}
+
+.campo-busca {
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #404040;
+  width: 260px;
+}
+
+/* Lista de recados */
+.recados-lista {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Card */
+.card-recado {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 0 0 1px #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Cabeçalho do card */
+.cabecalho-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  color: #404040;
+}
+
+/* Texto do recado */
+.conteudo-recado {
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #404040;
+  line-height: 1.5;
+}
+
+/* Texto com blur para recados protegidos */
+.protegido {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Botão de recado protegido */
+.botao-protegido {
+  background-color: #B5D7D6;
+  color: #404040;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  cursor: pointer;
+}
+
+/* Botão de "Li o recado" */
+.botao-lido {
+  background-color: #014627;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans Semibold', sans-serif;
+  cursor: pointer;
+}
+
+/* Campo de senha */
+.senha-container input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  width: 200px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.recados-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
