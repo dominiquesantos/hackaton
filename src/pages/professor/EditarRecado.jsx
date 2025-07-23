@@ -1,26 +1,26 @@
 // src/pages/professor/EditarRecado.jsx
 import React, { useState, useEffect } from "react";
-import "../../styles/NovoRecado.css"; // Reaproveitando o estilo
+import "../../styles/NovoRecado.css"; 
 import Header from "../../components/Header";
 import { useNavigate, useParams } from "react-router-dom";
 import { getRecadoById, updateRecado, deleteRecado } from "../../services/dataService";
 
 function EditarRecado() {
   const navigate = useNavigate();
-  const { id } = useParams(); // Pega o ID do recado da URL
+  const { id } = useParams(); 
   
   const [aluno, setAluno] = useState("");
   const [turma, setTurma] = useState("");
   const [recadoTexto, setRecadoTexto] = useState("");
   const [protegido, setProtegido] = useState(false);
 
-  // Carrega o recado específico ao montar o componente
+  
   useEffect(() => {
     console.log("EditarRecado: Tentando carregar recado com ID:", id);
     const recadoEncontrado = getRecadoById(id);
     if (recadoEncontrado) {
       console.log("EditarRecado: Recado encontrado:", recadoEncontrado);
-      setAluno(recadoEncontrado.nome || ""); // Use || "" para evitar undefined
+      setAluno(recadoEncontrado.nome || ""); 
       setTurma(recadoEncontrado.turma || "");
       setRecadoTexto(recadoEncontrado.texto || "");
       setProtegido(recadoEncontrado.protegido || false);
@@ -29,12 +29,11 @@ function EditarRecado() {
       alert("Recado não encontrado!");
       navigate('/recados');
     }
-  }, [id, navigate]); // Dependências do useEffect
-
+  }, [id, navigate]); 
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Objeto com os campos atualizados
+    
     const recadoAtualizado = {
       nome: aluno,
       turma,
@@ -43,11 +42,11 @@ function EditarRecado() {
     };
 
     console.log("EditarRecado: Tentando salvar recado ID:", id, "com dados:", recadoAtualizado);
-    const result = updateRecado(id, recadoAtualizado); // Chama a função de atualização
+    const result = updateRecado(id, recadoAtualizado); 
     
     if (result) {
       alert("Recado salvo com sucesso!");
-      navigate("/recados"); // Redireciona para a página de recados
+      navigate("/recados"); 
     } else {
       alert("Erro ao salvar recado. Tente novamente.");
     }
@@ -61,8 +60,8 @@ function EditarRecado() {
     }
   };
 
-  // Se o recado ainda não foi carregado, mostra uma mensagem (previne erro de renderização)
-  if (!aluno && !turma && !recadoTexto && id) { // Pequena checagem para evitar piscar quando carrega
+  
+  if (!aluno && !turma && !recadoTexto && id) { 
     return <div>Carregando recado...</div>;
   }
 
@@ -88,7 +87,7 @@ function EditarRecado() {
             required
           >
             <option value="">Selecione</option>
-            {/* Lista completa de turmas */}
+            
             <option value="1º ano Sala A">1º ano Sala A</option>
             <option value="1º ano Sala B">1º ano Sala B</option>
             <option value="1º ano Sala C">1º ano Sala C</option>
