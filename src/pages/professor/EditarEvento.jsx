@@ -7,8 +7,7 @@ import { getEventoById, updateEvento, deleteEvento } from "../../services/dataSe
 
 function EditarEvento() {
   const navigate = useNavigate();
-  const { id } = useParams(); // Pega o ID do evento da URL
-  
+  const { id } = useParams(); 
   const [titulo, setTitulo] = useState("");
   const [data, setData] = useState("");
   const [horario, setHorario] = useState("");
@@ -16,14 +15,14 @@ function EditarEvento() {
   const [tipo, setTipo] = useState("");
   const [descricao, setDescricao] = useState("");
 
-  // Carrega o evento específico ao montar o componente
+  
   useEffect(() => {
     console.log("EditarEvento: Tentando carregar evento com ID:", id);
     const eventoEncontrado = getEventoById(id);
     if (eventoEncontrado) {
       console.log("EditarEvento: Evento encontrado:", eventoEncontrado);
       setTitulo(eventoEncontrado.titulo || "");
-      setData(eventoEncontrado.data || ""); // Data já deve estar no formato YYYY-MM-DD
+      setData(eventoEncontrado.data || ""); 
       setHorario(eventoEncontrado.horario || "");
       setTurmas(eventoEncontrado.turmas || "");
       setTipo(eventoEncontrado.tipo || "");
@@ -38,7 +37,7 @@ function EditarEvento() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Objeto com os campos atualizados
+
     const eventoAtualizado = {
       titulo,
       data,
@@ -67,7 +66,7 @@ function EditarEvento() {
     }
   };
 
-  if (!titulo && !data && !horario && id) { // Pequena checagem para evitar piscar quando carrega
+  if (!titulo && !data && !horario && id) { 
     return <div>Carregando evento...</div>;
   }
 
