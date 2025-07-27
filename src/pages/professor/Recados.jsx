@@ -1,34 +1,34 @@
-// src/pages/professor/Recados.jsx (Ajustei o caminho da pasta para professor)
-import React, { useState, useEffect } from "react"; // Adicionado React, useState, useEffect
+
+import React, { useState, useEffect } from "react"; 
 import "../../styles/Recados.css";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
-import { getRecados, deleteRecado } from "../../services/dataService"; // Importa funções do dataService
+import { getRecados, deleteRecado } from "../../services/dataService"; 
 
 function Recados() {
   const navigate = useNavigate();
-  const [recados, setRecados] = useState([]); // Usar estado para gerenciar os recados
+  const [recados, setRecados] = useState([]); 
   const [busca, setBusca] = useState("");
 
-  // Carrega os recados do dataService ao montar o componente
+  
   useEffect(() => {
     setRecados(getRecados());
   }, []);
 
   const handleExcluir = (id) => {
     if (window.confirm("Tem certeza que deseja excluir este recado?")) {
-      const novaLista = deleteRecado(id); // Exclui e obtém a nova lista
-      setRecados(novaLista); // Atualiza o estado
+      const novaLista = deleteRecado(id); 
+      setRecados(novaLista);
       alert("Recado excluído com sucesso!");
     }
   };
 
-  // Filtra recados com base na busca
+  
   const recadosFiltrados = recados.filter(
     (recado) =>
-      recado.nome.toLowerCase().includes(busca.toLowerCase()) || // Filtrar por nome (aluno)
-      recado.turma.toLowerCase().includes(busca.toLowerCase()) || // Filtrar por turma
-      recado.texto.toLowerCase().includes(busca.toLowerCase()) // Filtrar por conteúdo
+      recado.nome.toLowerCase().includes(busca.toLowerCase()) || 
+      recado.turma.toLowerCase().includes(busca.toLowerCase()) || 
+      recado.texto.toLowerCase().includes(busca.toLowerCase()) 
   );
 
   return (
@@ -54,22 +54,22 @@ function Recados() {
             <p>Nenhum recado encontrado.</p>
           ) : (
             recadosFiltrados.map((recado) => (
-              <div key={recado.id} className="recado-card"> {/* Usar recado.id como key */}
+              <div key={recado.id} className="recado-card"> 
                 <h3>{recado.nome} – {recado.turma}</h3>
-                <p className="tempo">Recado enviado em {new Date(recado.dataCriacao).toLocaleDateString()}</p> {/* Exibir data de criação */}
+                <p className="tempo">Recado enviado em {new Date(recado.dataCriacao).toLocaleDateString()}</p> 
                 <p>{recado.texto}</p>
-                {/* Professor pode não ter campo professora, então removi */}
+                
 
                 <div className="recado-actions">
                   <button 
                     className="editar-btn" 
-                    onClick={() => navigate(`/recados/editar/${recado.id}`)} // Navegar para a rota de edição
+                    onClick={() => navigate(`/recados/editar/${recado.id}`)} 
                   >
                     Editar
                   </button>
                   <button 
                     className="excluir-btn" 
-                    onClick={() => handleExcluir(recado.id)} // Chamar função de exclusão
+                    onClick={() => handleExcluir(recado.id)} 
                   >
                     Excluir
                   </button>
