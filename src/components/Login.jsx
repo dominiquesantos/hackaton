@@ -9,33 +9,33 @@ function Login({ setIsAuthenticated }) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Login.jsx: Função handleLogin iniciada."); // DEBUG: Início da função
+    console.log("Login.jsx: Função handleLogin iniciada."); 
 
     const dominioPermitido = "@prof.trocafacil.ana.br";
     const senhaCorreta = "1234";
 
-    console.log("Login.jsx: Email digitado:", email); // DEBUG: Mostra o email
-    console.log("Login.jsx: Senha digitada:", senha); // DEBUG: Mostra a senha
+    console.log("Login.jsx: Email digitado:", email); 
+    console.log("Login.jsx: Senha digitada:", senha); 
 
     if (!email || !senha) {
       setErro("Preencha todos os campos.");
-      console.log("Login.jsx: Erro - Campos vazios."); // DEBUG: Erro campos vazios
+      console.log("Login.jsx: Erro - Campos vazios."); 
       return;
     }
 
     if (!email.endsWith(dominioPermitido)) {
       setErro("Use um e-mail institucional válido.");
-      console.log("Login.jsx: Erro - Domínio de email inválido."); // DEBUG: Erro domínio
+      console.log("Login.jsx: Erro - Domínio de email inválido."); 
       return;
     }
 
     if (senha !== senhaCorreta) {
       setErro("Senha incorreta.");
-      console.log("Login.jsx: Erro - Senha incorreta."); // DEBUG: Erro senha
+      console.log("Login.jsx: Erro - Senha incorreta."); 
       return;
     }
 
-    setErro(""); // Limpa qualquer erro anterior
+    setErro(""); 
     localStorage.setItem("authenticated", "true");
     setIsAuthenticated(true);
     console.log("Login.jsx: Autenticação bem-sucedida, setIsAuthenticated(true) chamado."); // DEBUG: Sucesso
@@ -53,7 +53,7 @@ function Login({ setIsAuthenticated }) {
           Entre com seu e-mail institucional para acessar os recados e eventos da escola.
         </p>
 
-        {/* ADICIONADO: noValidate para desativar a validação HTML5 do navegador */}
+        
         <form onSubmit={handleLogin} noValidate>
           <input
             type="email"
