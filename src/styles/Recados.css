@@ -1,15 +1,14 @@
-/* Fundo geral da tela */
 .recados-container {
   background-color: #FFFBEF;
   min-height: 100vh;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* Header verde com título e barra de busca */
+
 .recados-top-bar {
   width: 100vw;
   box-sizing: border-box;
-  background-color: rgba(1, 70, 39, 0.87); /* verde com opacidade */
+  background-color: rgba(1, 70, 39, 0.87); 
   padding: 40px 60px 60px 60px;
   display: flex;
   justify-content: space-between;
@@ -55,10 +54,10 @@
 .barra-pesquisa .lupa {
   position: absolute;
   right: 12px;
-  color: #6D28D9; /* roxo */
+  color: #6D28D9; 
 }
 
-/* Área principal: cards e botão lateral */
+
 .recados-conteudo {
   display: flex;
   padding: 40px 60px;
@@ -72,7 +71,7 @@
   gap: 30px;
 }
 
-/* Cada card */
+
 .recado-card {
   background-color: #FFFFFF;
   padding: 24px;
@@ -111,7 +110,7 @@
   margin-bottom: 20px;
 }
 
-/* Botões de ação */
+
 .recado-actions {
   display: flex;
   gap: 12px;
@@ -140,14 +139,14 @@
   cursor: pointer;
 }
 
-/* Status de leitura */
+
 .status-leitura {
   font-size: 13px;
   font-weight: 500;
   color: #404040;
 }
 
-/* Coluna lateral com botão */
+
 .coluna-lateral {
   display: flex;
   flex-direction: column;
