@@ -1,62 +1,45 @@
-/* src/styles/TurmasResponsavel.css */
-body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
+.turmas-responsavel-container {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: #FFFBEF;
- 
-}
-
-.turmas-container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 
-/* Header verde com título e botão */
 .turmas-header {
   background-color: rgba(1, 70, 39, 0.87);
-  color: #FFFFFF;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 48px;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 40px 60px 60px;
 }
 
 .turmas-header h1 {
-  font-size: 32px;
   font-weight: 600;
+  font-size: 40px;
   margin: 0;
-
-  align-items: center;
-  padding: 40px 80px;
-  
 }
 
-/* Botão Voltar */
 .voltar-btn {
   background-color: #D9D9D9;
-  color: #363636;
+  color: #404040;
+  border: none;
+  padding: 10px 20px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
-  padding: 8px 24px;
-  border: none;
-  border-radius: 8px;
+  font-size: 14px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-/* Grid de cards centralizado */
 .cards-grid {
-  max-width: 1100px;
-  margin: 40px auto 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 24px;
-  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 40px 60px;
+  justify-content: center;
 }
 
 .turma-card {
@@ -67,6 +50,7 @@ body {
   padding: 16px;
   border-radius: 12px;
   box-shadow: 0 0 0 1px #eee;
+  width: 280px;
 }
 
 .turma-card img {
