@@ -2,17 +2,18 @@
   background-color: #FFFBEF;
   font-family: 'Plus Jakarta Sans', sans-serif;
   min-height: 100vh;
-  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Header verde */
+
 .turmas-header {
   background-color: rgba(1, 70, 39, 0.87);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 80px;
+  padding: 40px 60px 60px;
 }
 
 .turmas-header h1 {
@@ -27,7 +28,7 @@
   font-size: 2rem;
 }
 
-/* Botão voltar */
+
 .voltar-button {
   background-color: #D9D9D9;
   color: #363636;
@@ -39,15 +40,16 @@
   cursor: pointer;
 }
 
-/* Cards */
+
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 24px;
-  padding: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
   max-width: 1440px;
   margin: 0 auto;
+  gap: 40px;
 }
+
 
 
 .turma-card {
@@ -85,3 +87,4 @@
   font-weight: 400;
   color: #363636;
 }
+
