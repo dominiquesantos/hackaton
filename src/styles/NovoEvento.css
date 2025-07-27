@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-/* Botão Voltar no topo direito */
+
 .voltar-button {
   position: absolute;
   top: 30px;
@@ -26,7 +26,7 @@
   cursor: pointer;
 }
 
-/* Card centralizado */
+
 .form-card {
   background-color: #F5F5F5;
   padding: 30px;
@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin: 0 auto; /* ESSENCIAL para centralizar */
+  margin: 0 auto;
 }
 
 .form-card label {
