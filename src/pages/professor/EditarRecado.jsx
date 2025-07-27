@@ -30,6 +30,7 @@ function EditarRecado() {
       navigate('/recados');
     }
   }, [id, navigate]); 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -87,7 +88,7 @@ function EditarRecado() {
             required
           >
             <option value="">Selecione</option>
-            
+            {/* Lista completa de turmas */}
             <option value="1º ano Sala A">1º ano Sala A</option>
             <option value="1º ano Sala B">1º ano Sala B</option>
             <option value="1º ano Sala C">1º ano Sala C</option>
