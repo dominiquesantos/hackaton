@@ -1,12 +1,57 @@
-# React + Vite
+# Hackaton - Conexão Escola & Responsáveis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto desenvolvido com o objetivo de aproximar responsáveis e professores por meio de uma plataforma simples e funcional.
 
-Currently, two official plugins are available:
+## 🚀 Objetivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Facilitar a comunicação entre responsáveis e professores, permitindo o envio e recebimento de **recados** e **eventos**.
 
-## Expanding the ESLint configuration
+## 🛠 Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 👨‍🏫 Acesso do Professor:
+- Login com e-mail institucional e senha
+- Visualização de turmas
+- Envio de recados por aluno
+- Criação e edição de eventos
+
+### 👨‍👩‍👧 Acesso do Responsável:
+- Desbloqueio de Recado por senha 
+- Visualização de turmas e recados
+- Visualização de eventos
+
+## 🧪 Tecnologias utilizadas
+
+### Linguagens de Programação:
+- **JavaScript**: Linguagem principal para a lógica do frontend.
+- **HTML**: Estrutura das páginas da web.
+- **CSS**: Estilização e design da interface do usuário.
+
+### Frameworks/Bibliotecas:
+- **React.js**: Biblioteca JavaScript para construção de interfaces de usuário dinâmicas e reativas, utilizando uma abordagem baseada em componentes.
+- **React Router DOM**: Biblioteca para gerenciamento de rotas e navegação na aplicação Single Page Application (SPA), garantindo uma experiência de usuário fluida sem recarregamento da página.
+- **Vite**: Ferramenta de build frontend para um ambiente de desenvolvimento rápido e otimizado.
+
+## 💻 Como rodar localmente
+
+1. Clone o repositório:
+
+
+git clone https://github.com/dominiquesantos/hackaton.git
+
+Acesse a pasta do projeto:
+
+cd frontend
+
+Instale as dependências:
+
+npm install
+
+Inicie o projeto:
+
+npm run dev
+
+O projeto abrirá automaticamente em http://localhost:5173.
+
+👥 Time
+
+Dominique Santos
