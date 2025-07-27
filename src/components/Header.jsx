@@ -7,8 +7,8 @@ function Header() {
 
   const handleLogout = () => {
     localStorage.setItem("authenticated", "false");
-    navigate("/"); // volta para login
-    window.location.reload(); // força atualização para refletir logout
+    navigate("/"); 
+    window.location.reload(); 
   };
 
   return (
@@ -31,3 +31,4 @@ function Header() {
 }
 
 export default Header;
+
