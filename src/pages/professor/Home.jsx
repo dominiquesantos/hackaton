@@ -3,17 +3,17 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import "../../styles/Home.css";
 import { useNavigate } from "react-router-dom";
-import { getEventos } from "../../services/dataService"; // Importa getEventos
+import { getEventos } from "../../services/dataService"; 
 
 function Home() {
   const navigate = useNavigate();
   const [eventos, setEventos] = useState([]);
 
   useEffect(() => {
-    // Carrega eventos e ordena pela data mais próxima para exibir na agenda
+    
     const todosEventos = getEventos();
     const eventosOrdenados = todosEventos.sort((a, b) => new Date(a.data) - new Date(b.data));
-    setEventos(eventosOrdenados.slice(0, 4)); // Pega os 4 próximos eventos
+    setEventos(eventosOrdenados.slice(0, 4)); 
   }, []);
 
   const handleSearch = (e) => {
