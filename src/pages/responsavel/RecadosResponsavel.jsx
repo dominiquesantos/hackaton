@@ -1,140 +1,137 @@
 // src/pages/responsavel/RecadosResponsavel.jsx
-import React, { useState, useEffect } from "react"; // Adicionado useEffect
+import React, { useState, useEffect } from "react";
 import "../../styles/RecadosResponsavel.css";
-import "../../styles/global.css";
-import { getRecados, updateRecado } from "../../services/dataService"; // Importa as funções
-import { Link } from "react-router-dom"; // Importa Link
 
-function RecadosResponsavel() {
-  const [recados, setRecados] = useState([]); // Usar estado para gerenciar recados
-  const [recadoAbertoId, setRecadoAbertoId] = useState(null); // ID do recado aberto (melhor que index)
-  const [senha, setSenha] = useState("");
+const recadosFake = [
+  {
+    id: 1,
+    nome: "Alice Ramos Santana",
+    turma: "1º ano Sala A",
+    tempo: "1 dia atrás",
+    protegido: true,
+    texto: "Olá! Esse recado está protegido com blur...",
+    autor: "Professora Ana",
+  },
+  {
+    id: 2,
+    nome: "Felipe Gabriel Mendes",
+    turma: "1º ano Sala A",
+    tempo: "1 dia atrás",
+    protegido: true,
+    texto:
+      "Olá! O Felipe esqueceu o caderno e a apostila duas vezes nesta semana, o que comprometeu um pouco seu acompanhamento das atividades. Sei que pode acontecer, mas achei importante avisar para que possamos ajudá-lo a desenvolver mais autonomia com a rotina escolar. Uma boa dica pode ser montar uma listinha e conferir junto com ele antes de sair de casa.",
+    autor: "Professora Ana",
+  },
+  {
+    id: 3,
+    nome: "Bruno Henrique Costa",
+    turma: "1º ano Sala B",
+    tempo: "2 dias atrás",
+    protegido: true,
+    texto: "Este recado também está protegido e deve ter blur.",
+    autor: "Professora Ana",
+  }
+];
+
+export default function RecadosResponsavel() {
+  const [recados, setRecados] = useState([]);
   const [busca, setBusca] = useState("");
 
-  // Carrega os recados do dataService quando o componente é montado
   useEffect(() => {
-    setRecados(getRecados());
+    
+    const recadosIniciais = recadosFake.map((recado) => ({
+      ...recado,
+      desbloqueado: false,
+      lido: false,
+      dataLeitura: ""
+    }));
+    setRecados(recadosIniciais);
   }, []);
 
-  const autenticar = (id) => { // Recebe o ID do recado
-    if (senha === "1234") { // Senha fixa para fins de demonstração
-      setRecadoAbertoId(id); // Define o ID do recado que pode ser visto
-      setSenha(""); // Limpa a senha para a próxima vez
+  const handleDesbloquear = (recadoId) => {
+    const senha = prompt("Digite a senha para visualizar o recado:");
+    const senhaCorreta = "alunofelipe2025";
+
+    const recado = recados.find((r) => r.id === recadoId);
+    const isFelipe = recado.nome.includes("Felipe");
+
+    if (isFelipe && senha === senhaCorreta) {
+      setRecados((prev) =>
+        prev.map((r) =>
+          r.id === recadoId ? { ...r, desbloqueado: true } : r
+        )
+      );
     } else {
       alert("Senha incorreta!");
     }
   };
 
-  const marcarComoLido = (id) => { // Recebe o ID do recado
-    // Atualiza o recado no dataService
-    const updatedRecado = updateRecado(id, { lido: true });
-    
-    if (updatedRecado) {
-      // Atualiza o estado local para forçar a re-renderização
-      setRecados(prevRecados => 
-        prevRecados.map(rec => 
-          rec.id === id ? { ...rec, lido: true } : rec
-        )
-      );
-      alert("Recado marcado como lido!");
-    }
+  const handleMarcarComoLido = (recadoId) => {
+    const data = new Date().toLocaleDateString("pt-BR");
+    setRecados((prev) =>
+      prev.map((r) =>
+        r.id === recadoId ? { ...r, lido: true, dataLeitura: data } : r
+      )
+    );
   };
 
-  // Filtra recados com base na busca
-  const recadosFiltrados = recados.filter(
-    (recado) =>
-      recado.nome.toLowerCase().includes(busca.toLowerCase()) ||
-      recado.turma.toLowerCase().includes(busca.toLowerCase()) ||
-      recado.texto.toLowerCase().includes(busca.toLowerCase())
+  const recadosFiltrados = recados.filter((r) =>
+    r.nome.toLowerCase().includes(busca.toLowerCase())
   );
 
   return (
-    <div className="recados-responsavel">
-      {/* Header igual ao da home */}
-      <header className="responsavel-header">
-        <div className="container">
-          <div className="logo">Troca Fácil</div>
-          <nav>
-            <Link to="/">Home</Link> {/* Usar Link para navegação SPA */}
-            <Link to="/eventos">Eventos</Link>
-            <Link to="/responsavel/turmas">Turmas</Link>
-            <Link to="/responsavel/recados">Recados</Link>
-            <Link to="/login" className="login-button">Login</Link>
-          </nav>
-        </div>
-      </header>
-
-      {/* Faixa verde com busca */}
-      <div className="faixa-verde">
-        <div className="container">
-          <h1>Recados</h1>
+    <div className="recados-page">
+      <div className="recados-banner">
+        <div className="recados-banner-content">
+          <h1 className="recados-title">Recados</h1>
           <input
-            className="campo-busca"
             type="text"
+            className="recados-search"
             placeholder="Pesquise uma turma ou aluno"
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
           />
+          <button className="voltar-btn" onClick={() => window.location.href = "http://localhost:5173"}>
+            Voltar
+          </button>
         </div>
       </div>
 
-      {/* Cards */}
-      <div className="container">
-        <div className="recados-lista">
-          {recadosFiltrados.length === 0 ? (
-            <p>Nenhum recado disponível.</p>
-          ) : (
-            recadosFiltrados.map((recado) => (
-              <div className="card-recado" key={recado.id}> {/* Usar recado.id como key */}
-                <div className="cabecalho-card">
-                  <strong>{recado.nome} – {recado.turma}</strong>
-                  {recado.protegido ? (
-                    recadoAbertoId === recado.id ? ( // Checa se este recado está aberto
-                      <button className="botao-lido" onClick={() => marcarComoLido(recado.id)}>
-                        {recado.lido ? "✅ Lido" : "Li o recado!"}
-                      </button>
-                    ) : (
-                      <button
-                        className="botao-protegido"
-                        onClick={() => autenticar(recado.id)}
-                      >
-                        🔒 Recado Protegido
-                      </button>
-                    )
-                  ) : (
-                    <button className="botao-lido" onClick={() => marcarComoLido(recado.id)}>
-                      {recado.lido ? "✅ Lido" : "Li o recado!"}
+      <div className="recados-lista">
+        {recadosFiltrados.map((recado) => (
+          <div key={recado.id} className="recado-card">
+            <h3 className="recado-titulo">
+              {recado.nome} – {recado.turma}
+            </h3>
+            <p className="recado-data">Recado enviado {recado.tempo}</p>
+
+            {!recado.desbloqueado ? (
+              <div
+                className="recado-status protegido"
+                onClick={() => handleDesbloquear(recado.id)}
+              >
+                🔒 Recado Protegido (clique para desbloquear)
+              </div>
+            ) : (
+              <>
+                <p className="recado-texto">{recado.texto}</p>
+                <p className="recado-autor">— {recado.autor}</p>
+                <div className="recado-status lido">
+                  {!recado.lido ? (
+                    <button onClick={() => handleMarcarComoLido(recado.id)}>
+                      ✅ Marcar como lido
                     </button>
+                  ) : (
+                    <p style={{ color: "#FFFFFF" }}>
+                      👁️ Lido em {recado.dataLeitura}
+                    </p>
                   )}
                 </div>
-
-                <div
-                  className={
-                    recado.protegido && recadoAbertoId !== recado.id // Aplica blur se protegido e não aberto
-                      ? "conteudo-recado protegido"
-                      : "conteudo-recado"
-                  }
-                >
-                  <p>{recado.texto}</p>
-                </div>
-
-                {recado.protegido && recadoAbertoId !== recado.id && ( // Mostra campo de senha se protegido e não aberto
-                  <div className="senha-container">
-                    <input
-                      type="password"
-                      placeholder="Digite sua senha"
-                      value={senha}
-                      onChange={(e) => setSenha(e.target.value)}
-                    />
-                  </div>
-                )}
-              </div>
-            ))
-          )}
-        </div>
+              </>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
-
-export default RecadosResponsavel;
