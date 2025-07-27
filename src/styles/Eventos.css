@@ -9,7 +9,7 @@
 .eventos-header {
   width: 100vw;
   box-sizing: border-box;
-  background-color: rgba(1, 70, 39, 0.87); /* verde com opacidade */
+  background-color: rgba(1, 70, 39, 0.87); 
   padding: 40px 60px 60px 60px;
   display: flex;
   justify-content: space-between;
