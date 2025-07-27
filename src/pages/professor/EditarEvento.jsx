@@ -1,13 +1,14 @@
 // src/pages/professor/EditarEvento.jsx
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
-import "../../styles/NovoEvento.css"; 
+import "../../styles/NovoEvento.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { getEventoById, updateEvento, deleteEvento } from "../../services/dataService";
 
 function EditarEvento() {
   const navigate = useNavigate();
-  const { id } = useParams(); 
+  const { id } = useParams();
+
   const [titulo, setTitulo] = useState("");
   const [data, setData] = useState("");
   const [horario, setHorario] = useState("");
@@ -15,20 +16,16 @@ function EditarEvento() {
   const [tipo, setTipo] = useState("");
   const [descricao, setDescricao] = useState("");
 
-  
   useEffect(() => {
-    console.log("EditarEvento: Tentando carregar evento com ID:", id);
     const eventoEncontrado = getEventoById(id);
     if (eventoEncontrado) {
-      console.log("EditarEvento: Evento encontrado:", eventoEncontrado);
       setTitulo(eventoEncontrado.titulo || "");
-      setData(eventoEncontrado.data || ""); 
+      setData(eventoEncontrado.data || "");
       setHorario(eventoEncontrado.horario || "");
       setTurmas(eventoEncontrado.turmas || "");
       setTipo(eventoEncontrado.tipo || "");
       setDescricao(eventoEncontrado.descricao || "");
     } else {
-      console.error("EditarEvento: Evento não encontrado para ID:", id);
       alert("Evento não encontrado!");
       navigate('/eventos');
     }
@@ -36,7 +33,6 @@ function EditarEvento() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
 
     const eventoAtualizado = {
       titulo,
@@ -47,9 +43,8 @@ function EditarEvento() {
       descricao,
     };
 
-    console.log("EditarEvento: Tentando salvar evento ID:", id, "com dados:", eventoAtualizado);
     const result = updateEvento(id, eventoAtualizado);
-    
+
     if (result) {
       alert("Evento salvo com sucesso!");
       navigate("/eventos");
@@ -66,10 +61,6 @@ function EditarEvento() {
     }
   };
 
-  if (!titulo && !data && !horario && id) { 
-    return <div>Carregando evento...</div>;
-  }
-
   return (
     <>
       <Header />
@@ -78,7 +69,7 @@ function EditarEvento() {
           Voltar
         </button>
 
-        <div className="form-card">
+        <form className="form-card" onSubmit={handleSubmit}>
           <label htmlFor="titulo">Título</label>
           <input
             type="text"
@@ -136,10 +127,14 @@ function EditarEvento() {
           />
 
           <div className="botoes">
-            <button type="button" className="btn-excluir" onClick={handleExcluir}>Excluir</button>
-            <button type="submit" className="btn-enviar">Salvar</button>
+            <button type="button" className="btn-excluir" onClick={handleExcluir}>
+              Excluir
+            </button>
+            <button type="submit" className="btn-enviar">
+              Salvar
+            </button>
           </div>
-        </div>
+        </form>
 
         <div className="rodape-verde"></div>
       </main>
