@@ -3,7 +3,7 @@
 const RECADOS_KEY = 'recadosData';
 const EVENTOS_KEY = 'eventosData';
 
-// Dados iniciais para Recados
+
 const initialRecados = [
   { 
     id: 'rec1', 
@@ -12,7 +12,7 @@ const initialRecados = [
     texto: "Olá! Esse é um recado protegido. Ele será exibido após autenticação.", 
     protegido: true, 
     lido: false,
-    dataCriacao: "2025-07-20T10:00:00Z" // Data atualizada para 2025
+    dataCriacao: "2025-07-20T10:00:00Z" 
   },
   { 
     id: 'rec2', 
@@ -21,7 +21,7 @@ const initialRecados = [
     texto: "O Felipe esqueceu o caderno duas vezes essa semana...", 
     protegido: false, 
     lido: true,
-    dataCriacao: "2025-07-19T14:30:00Z" // Data atualizada para 2025
+    dataCriacao: "2025-07-19T14:30:00Z" 
   },
   { 
     id: 'rec3', 
@@ -30,16 +30,16 @@ const initialRecados = [
     texto: "Recado sobre o desempenho do aluno durante a semana...", 
     protegido: true, 
     lido: false, 
-    dataCriacao: "2025-07-18T09:15:00Z" // Data atualizada para 2025
+    dataCriacao: "2025-07-18T09:15:00Z" 
   },
 ];
 
-// Dados iniciais para Eventos - AGORA DEFINITIVAMENTE EM 2025
+// Dados iniciais para Eventos
 const initialEventos = [
   { 
     id: 'evt1', 
     titulo: "Reunião de pais – 2º Bimestre", 
-    data: "2025-08-05", // ATUALIZADA para 2025
+    data: "2025-08-05", 
     horario: "09h / 10h", 
     turmas: "1º ano Sala A, 1º ano Sala B", 
     tipo: "reuniao",
@@ -48,7 +48,7 @@ const initialEventos = [
   { 
     id: 'evt2', 
     titulo: "Feira de Ciências", 
-    data: "2025-08-10", // ATUALIZADA para 2025
+    data: "2025-08-10", 
     horario: "manhã", 
     turmas: "3º e 4º ano", 
     tipo: "feira",
@@ -57,8 +57,8 @@ const initialEventos = [
   { 
     id: 'evt3', 
     titulo: "Entrega de Atividade", 
-    data: "2025-08-15", // ATUALIZADA para 2025
-    horario: "horário de aula", 
+    data: "2025-08-15", 
+    horario: "Horário de aula", 
     turmas: "4º e 5º ano", 
     tipo: "atividade",
     descricao: "Entrega da atividade de leitura do livro 'Meu Pé de Laranja Lima'."
@@ -66,7 +66,7 @@ const initialEventos = [
   { 
     id: 'evt4', 
     titulo: "Reunião de pais – 2º Bimestre", 
-    data: "2025-08-20", // ATUALIZADA para 2025
+    data: "2025-08-20",
     horario: "08h30 / 10h30", 
     turmas: "1º ano Sala C, 2º ano Sala A, 2º ano Sala B", 
     tipo: "reuniao",
@@ -75,7 +75,7 @@ const initialEventos = [
   { 
     id: 'evt5', 
     titulo: "Palestra sobre Segurança Online", 
-    data: "2025-08-22", // ATUALIZADA para 2025
+    data: "2025-08-22", 
     horario: "14h", 
     turmas: "Todas as turmas", 
     tipo: "outros",
@@ -83,9 +83,9 @@ const initialEventos = [
   },
   { 
     id: 'evt6', 
-    titulo: "Dia da Família na Escola", 
-    data: "2025-09-01", // ATUALIZADA para 2025
-    horario: "Integral", 
+    titulo: "Dia do Responsável na Escola", 
+    data: "2025-09-01", 
+    horario: "Manhã", 
     turmas: "Todas as turmas", 
     tipo: "atividade",
     descricao: "Atividades recreativas e educativas para toda a família."
@@ -111,7 +111,7 @@ const getData = (key, initialData) => {
 // Função auxiliar para salvar dados no localStorage
 const saveData = (key, data) => {
   localStorage.setItem(key, JSON.stringify(data));
-  console.log(`dataService: Salvando chave '${key}' no localStorage.`); // LOG para verificar salvamento
+  console.log(`dataService: Salvando chave '${key}' no localStorage.`);
 };
 
 // --- Funções para Recados ---
@@ -196,7 +196,7 @@ export const updateEvento = (id, updatedFields) => {
   if (index > -1) {
     eventos[index] = { ...eventos[index], ...updatedFields };
     saveData(EVENTOS_KEY, eventos);
-    console.log("dataService: Dados SALVOS no localStorage para EVENTOS. Novo array:", eventos); // Log da nova lista de eventos
+    console.log("dataService: Dados SALVOS no localStorage para EVENTOS. Novo array:", eventos);
     console.log("dataService: Evento atualizado:", eventos[index]);
     return eventos[index];
   }
