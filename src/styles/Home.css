@@ -10,13 +10,13 @@ body {
   color: #363636;
 }
 
-/* Container principal */
+
 .home-container {
   width: 100vw;
   min-height: 100vh;
 }
 
-/* Seção Hero */
+
 .hero {
   display: flex;
   justify-content: space-between;
@@ -79,7 +79,7 @@ body {
   max-width: 450px;
 }
 
-/* Seção Agenda */
+
 .agenda {
   background-color: rgba(1, 70, 39, 0.87);
   color: #F5F5F5;
@@ -183,7 +183,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 40px; /* dá espaço dos cards */
+  margin-top: 40px; 
 }
 
 .see-more button {
