@@ -14,20 +14,20 @@ function TurmasResponsavel() {
     { ano: "5º ano", turmas: "4 Turmas" },
   ];
 
-return (
-  <div className="turmas-responsavel">
-    <div className="turmas-container">
-      {/* Header */}
-      <header className="turmas-header">
+  return (
+    <div className="turmas-responsavel-container">
+      
+      <div className="turmas-header">
         <h1>Turmas</h1>
-        <button className="voltar-btn" onClick={() => navigate("/")}>Voltar</button>
-      </header>
+        <button className="voltar-btn" onClick={() => navigate("/")}>
+          Voltar
+        </button>
+      </div>
 
-      {/* Lista de cards */}
       <div className="cards-grid">
         {anos.map((item, index) => (
           <div className="turma-card" key={index}>
-            <img src="/menina.png" alt="Ícone" />
+            <img src="/livros.png" alt="Ícone" />
             <div className="card-text">
               <h2>{item.ano}</h2>
               <p>{item.turmas}</p>
@@ -36,9 +36,7 @@ return (
         ))}
       </div>
     </div>
-  </div>
-);
-
+  );
 }
 
 export default TurmasResponsavel;
