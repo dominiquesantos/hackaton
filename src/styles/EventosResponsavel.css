@@ -9,84 +9,106 @@
 }
 
 .eventos-header {
-  background-color: rgba(1, 70, 39, 0.87); /* faixa verde com opacidade */
+  background-color: rgba(1, 70, 39, 0.87);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 40px;
+  padding: 40px 60px 60px;
 }
 
 .eventos-header h1 {
   font-weight: 600;
-  font-size: 28px;
-  font-family: 'Plus Jakarta Sans Semibold';
+  font-size: 40px;
 }
 
-.eventos-header button {
+.botao-voltar {
   background-color: #D9D9D9;
   color: #404040;
   border: none;
   padding: 10px 20px;
-  font-family: 'Plus Jakarta Sans Semibold';
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
   font-size: 14px;
   border-radius: 6px;
   cursor: pointer;
 }
 
 .eventos-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-  padding: 40px;
-  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 40px 60px;
+  justify-content: center;
 }
 
 .evento-card {
-  background-color: #FFFFFF;
+  background-color: #fff;
+  border-radius: 12px;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  color: #363636;
+  width: 260px;
+  min-height: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: #1a1a1a;
 }
 
 .evento-card h3 {
-  font-family: 'Plus Jakarta Sans Semibold';
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .evento-card .data {
   font-size: 14px;
-  margin-bottom: 8px;
+  color: #666;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.evento-card p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 6px;
 }
 
 .evento-card .descricao {
-  font-family: 'Plus Jakarta Sans Regular';
   font-size: 14px;
+  color: #404040;
   white-space: pre-line;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .evento-card .abrir {
   background-color: #D9D9D9;
   color: #404040;
   border: none;
-  padding: 6px 12px;
-  font-family: 'Plus Jakarta Sans Semibold';
+  padding: 6px 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
   font-size: 13px;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+.evento-card .abrir:hover {
+  background-color: #c4c4c4;
 }
 
 .eventos-footer {
   background-color: #FFFBEF;
-  padding: 20px 40px;
+  padding: 40px 100px;
   text-align: left;
-  font-size: 14px;
+  font-size: 0.95rem;
   color: #404040;
+}
+
+.eventos-footer p {
+  margin-bottom: 6px;
 }
