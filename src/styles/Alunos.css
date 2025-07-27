@@ -1,4 +1,4 @@
-/* container principal da tela */
+
 .alunos-container {
   background-color: #FFFBEF;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 
-/* header verde */
+
 .alunos-header {
   background-color: rgba(1, 70, 39, 0.87);
   color: white;
@@ -17,7 +17,7 @@
   padding: 40px 80px;
 }
 
-/* botão voltar */
+
 .voltar-button {
   background-color: #D9D9D9;
   color: #363636;
@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 
-/* cards dos alunos */
+
 .alunos-lista {
   display: flex;
   flex-wrap: wrap;
