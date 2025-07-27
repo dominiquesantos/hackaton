@@ -6,7 +6,7 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* HEADER */
+
 
 .responsavel-header {
   background-color: #FFFBEF;
@@ -112,6 +112,7 @@ body {
   background: transparent;
   outline: none;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  
 }
 
 .campo-pesquisa span {
@@ -123,7 +124,7 @@ body {
   max-width: 260px;
 }
 
-/* AGENDA */
+
 
 .agenda {
   background-color: rgba(1, 70, 39, 0.87);
@@ -174,7 +175,7 @@ body {
   font-family: 'Plus Jakarta Sans Semibold', sans-serif;
 }
 
-/* BOTÃO VER MAIS */
+
 
 .ver-mais-container {
   margin-top: 30px;
@@ -190,7 +191,7 @@ body {
   color: #000;
 }
 
-/* RODAPÉ */
+
 
 .rodape {
   padding: 40px 80px;
