@@ -1,4 +1,3 @@
-
 import React, { useState } from "react"; 
 import Header from "../../components/Header";
 import "../../styles/NovoEvento.css";
@@ -40,7 +39,7 @@ function NovoEvento() {
           Voltar
         </button>
 
-        <div className="form-card">
+        <form className="form-card" onSubmit={handleSubmit}>
           <label htmlFor="titulo">Título</label>
           <input 
             type="text" 
@@ -53,7 +52,7 @@ function NovoEvento() {
 
           <label htmlFor="data">Data</label>
           <input 
-            type="date" // Alterado para type="date" para melhor UX
+            type="date" 
             id="data" 
             value={data}
             onChange={(e) => setData(e.target.value)}
@@ -80,14 +79,14 @@ function NovoEvento() {
           />
 
           <label htmlFor="tipo">Tipo de Evento</label>
-            <select id="tipo" value={tipo} onChange={(e) => setTipo(e.target.value)} required>
-              <option value="">Selecione...</option>
-              <option value="reuniao">Reunião</option>
-              <option value="feira">Feira</option>
-              <option value="atividade">Atividade</option>
-              <option value="apresentacao">Apresentação</option>
-              <option value="outros">Outros</option>
-            </select>
+          <select id="tipo" value={tipo} onChange={(e) => setTipo(e.target.value)} required>
+            <option value="">Selecione...</option>
+            <option value="reuniao">Reunião</option>
+            <option value="feira">Feira</option>
+            <option value="atividade">Atividade</option>
+            <option value="apresentacao">Apresentação</option>
+            <option value="outros">Outros</option>
+          </select>
 
           <label htmlFor="descricao">Descrição (Opcional)</label>
           <textarea 
@@ -98,10 +97,9 @@ function NovoEvento() {
           />
 
           <div className="botoes">
-            
             <button type="submit" className="btn-enviar">Criar Evento</button>
           </div>
-        </div>
+        </form>
 
         <div className="rodape-verde"></div>
       </main>
